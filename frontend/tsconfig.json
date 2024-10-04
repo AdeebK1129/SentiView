@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "es6",                                  /* Set the JavaScript language version for emitted JavaScript. */
+    "module": "esnext",                                /* Specify what module code is generated. */
+    "lib": ["dom", "dom.iterable", "esnext"],          /* Specify a set of bundled library declaration files. */
+    "allowJs": true,                                   /* Allow JavaScript files to be a part of your program. */
+    "skipLibCheck": true,                              /* Skip type checking of all declaration files (.d.ts). */
+    "esModuleInterop": true,                           /* Emit additional JS for CommonJS compatibility. */
+    "forceConsistentCasingInFileNames": true,          /* Ensure consistent case usage in imports. */
+    "strict": true,                                    /* Enable all strict type-checking options. */
+    "moduleResolution": "node",                        /* Specify module resolution strategy: 'node' for Node.js. */
+    "resolveJsonModule": true,                         /* Enable importing JSON files as modules. */
+    "isolatedModules": true,                           /* Ensure that each file can be safely transpiled. */
+    
+    /* JSX Configuration */
+    "jsx": "react-jsx",                                /* Use the React 17+ JSX transform for JSX compilation. */
+
+    /* Type Checking */
+    "noImplicitAny": true,                             /* Enable error reporting for 'any' types. */
+    "strictNullChecks": true,                          /* Ensure strict checking of null and undefined types. */
+    "noImplicitThis": true,                            /* Enable error reporting for 'this' expressions with an 'any' type. */
+    "alwaysStrict": true,                              /* Emit 'use strict' directive in all emitted JavaScript. */
+    "noFallthroughCasesInSwitch": true,                /* Ensure 'switch' statements handle all cases properly. */
+
+    /* Source Maps */
+    "sourceMap": true,                                 /* Enable source maps for debugging TypeScript in browser dev tools. */
+
+    /* Paths */
+    "baseUrl": "./",                                   /* Base directory to resolve non-relative module names. */
+    "paths": {
+      "@/*": ["src/*"]                                 /* Enable absolute imports from 'src/' folder. */
+    }
+  },
+  "include": [
+    "src"                                              /* Include all files in the 'src' directory. */
+  ],
+  "exclude": [
+    "node_modules",                                    /* Exclude 'node_modules' from the build. */
+    "build"                                            /* Exclude the 'build' directory from the build. */
+  ]
+}
