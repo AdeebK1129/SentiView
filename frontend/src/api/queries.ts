@@ -1,7 +1,9 @@
+import axios from 'axios';
+
 /**
  * fetchHelloWorld function
  * 
- * Fetches a "Hello, World!" message from the backend Django API.
+ * Fetches a "Hello, World!" message from the backend Django API using axios.
  * 
  * @async
  * @function fetchHelloWorld
@@ -9,9 +11,10 @@
  * @throws {Error} If the network request fails, an error will be thrown.
  */
 export const fetchHelloWorld = async (): Promise<{ message: string }> => {
-    const response = await fetch('http://127.0.0.1:8000/api/hello/');
-    if (!response.ok) {
-        throw new Error('Network response was not ok');
+    try {
+        const response = await axios.get<{ message: string }>('http://127.0.0.1:8000/api/hello/');
+        return response.data;  // Axios automatically parses JSON response
+    } catch (error) {
+        throw new Error('Network request failed');
     }
-    return response.json();
 };
