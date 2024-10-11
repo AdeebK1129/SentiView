@@ -72,12 +72,19 @@ Before running this project, ensure you have the following installed on your sys
     pip-sync requirements_env/main.txt requirements_env/dev.txt
     ```
 
-4. Create a `.env` file and add the following configuration:
+4. Create a `secrets.json` file inside the `backend` directory with the following structure:
+    ```json
+    {
+      "SECRET_KEY": "your-secret-key",
+      "DATABASE_NAME": "your-database-name",
+      "DATABASE_USER": "your-database-user",
+      "DATABASE_PASSWORD": "your-database-password",
+      "DATABASE_HOST": "localhost",
+      "DATABASE_PORT": "5432"
+    }
     ```
-    SECRET_KEY=your-secret-key
-    DEBUG=True
-    DATABASE_URL=your-database-url
-    ```
+
+    Replace the placeholder values with your own database information.
 
 5. Run migrations and start the Django development server:
     ```bash
