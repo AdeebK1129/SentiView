@@ -1,0 +1,6 @@
+# requirements_env/main.in
+django
+djangorestframework
+channels
+django-cors-headers
+psycopg2-binary

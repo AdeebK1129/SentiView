@@ -1,0 +1,49 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-error.log
+.env
+
+# React build
+build/
+
+# macOS
+.DS_Store
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Django
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.env
+db.sqlite3
+
+# Virtual environments
+venv/
+env/
+virtualenv/
+*.env
+
+# Migrations
+*/migrations/*.pyc
+*/migrations/__pycache__/
+
+# Django static and media files
+staticfiles/
+media/
+
+# Docker
+docker-compose.override.yml
+*.swp
+
+# Python Env
+env
+
+# Secrets
+secrets.json
+
+backend/backend/secrets.json
