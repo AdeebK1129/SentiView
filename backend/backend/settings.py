@@ -125,6 +125,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Auth User Model
+AUTH_USER_MODEL = 'api.CustomUser'
+
 # Internationalization settings
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
