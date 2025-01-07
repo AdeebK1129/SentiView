@@ -1,5 +1,2 @@
-# requirements_env/dev.in
 -c main.txt
-django-extensions             # Example: Useful Django development tools
-jupyterlab                    # Example: For working with Jupyter notebooks
-flake8                        # Example: For linting and code quality
+django-extensions

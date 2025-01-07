@@ -1,6 +1,4 @@
-# requirements_env/main.in
-django
-djangorestframework
-channels
-django-cors-headers
+django~=5.0.0
 psycopg2-binary
+django-environ
+djangorestframework~=3.14

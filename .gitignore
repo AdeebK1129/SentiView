@@ -45,5 +45,6 @@ env
 
 # Secrets
 secrets.json
+.env
 
 backend/backend/secrets.json
