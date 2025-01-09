@@ -33,6 +33,7 @@ class UserCreateSerializer(serializers.ModelSerializer):
         }
 
     def create(self, validated_data):
+        # Create the user and set timestamps
         user = User.objects.create_user(
             email=validated_data['email'],
             password=validated_data['password'],
@@ -41,5 +42,6 @@ class UserCreateSerializer(serializers.ModelSerializer):
             gender=validated_data.get('gender'),
             location=validated_data.get('location'),
         )
+        user.created_at = user.modified_at = user.created_at or user.modified_at
+        user.save()
         return user
-

@@ -5,6 +5,7 @@ from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
+from rest_framework.exceptions import PermissionDenied
 from .models import User
 from .serializers import UserSerializer, UserCreateSerializer
 
@@ -14,6 +15,20 @@ class UserCreateView(CreateAPIView):
     API view for user registration.
     """
     serializer_class = UserCreateSerializer
+
+    def create(self, request, *args, **kwargs):
+        """
+        Overriding create to include the `UserSerializer` in response.
+        """
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        user = serializer.save()
+        # Return the serialized user data with timestamps
+        return Response(
+            UserSerializer(user).data,
+            status=status.HTTP_201_CREATED
+        )
+
 
 
 class UserProfileView(RetrieveUpdateAPIView):
@@ -88,8 +103,14 @@ class ChangePasswordView(APIView):
 class ListAllUsersView(ListAPIView):
     """
     API view for listing all users.
-    (Admin-only functionality)
+    (Superuser-only functionality)
     """
     serializer_class = UserSerializer
     queryset = User.objects.all()
     permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        # Check if the user is a superuser
+        if not self.request.user.is_superuser:
+            raise PermissionDenied("You do not have permission to view this resource.")
+        return super().get_queryset()
