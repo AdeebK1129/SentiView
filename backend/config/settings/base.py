@@ -20,7 +20,8 @@ CREATED_APP = [
 ]  # custom apps goes here
 
 THIRD_PARTY_APP = [
-    'rest_framework'
+    'rest_framework',
+    'rest_framework.authtoken'
 ]  # third party apps goes here
 
 INSTALLED_APPS = [*DEFAULT_APP, *CREATED_APP, *THIRD_PARTY_APP]
@@ -79,6 +80,8 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
+
+AUTH_USER_MODEL = "user.User"
 
 LANGUAGE_CODE = "en-us"
 
