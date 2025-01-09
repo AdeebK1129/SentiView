@@ -12,6 +12,11 @@ DEFAULT_APP = [
 ]
 CREATED_APP = [
     "apps.core",
+    "apps.user",
+    "apps.review",
+    "apps.notification",
+    "apps.survey",
+    "apps.team",
 ]  # custom apps goes here
 
 THIRD_PARTY_APP = [

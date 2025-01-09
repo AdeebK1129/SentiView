@@ -1,13 +1,9 @@
-# apps/core/models.py
 from django.db import models
 
-# Create your models here.
-from django.db import models
-
-class TimestampedModel(models.Model):
+class Timestamp(models.Model):
+    """Abstract model for created_at and modified_at fields."""
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    modified_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         abstract = True
-
